@@ -46,39 +46,45 @@
         Sleep <span>Studio</span>
     </a>
 
-    <nav>
-        <ul class="nav-links">
+    <nav class="main-nav">
 
-            <li>
-                <a href="#home">Home</a>
-            </li>
+    <button class="menu-toggle" aria-label="Open navigation">
+        ☰
+    </button>
 
-            <li>
-                <a href="#mattresses">Mattresses</a>
-            </li>
+    <ul class="nav-links">
 
-            <li>
-                <a href="#products">Products</a>
-            </li>
+        <li>
+            <a href="#home">Home</a>
+        </li>
 
-            <li>
-                <a href="#about">About</a>
-            </li>
+        <li>
+            <a href="#mattresses">Mattresses</a>
+        </li>
 
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
+        <li>
+            <a href="#products">Products</a>
+        </li>
 
-            <li>
-                <a class="nav-whatsapp"
-                   href="https://wa.me/919048503810"
-                   target="_blank">
-                    WhatsApp
-                </a>
-            </li>
+        <li>
+            <a href="#about">About</a>
+        </li>
 
-        </ul>
-    </nav>
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+        <li>
+            <a class="nav-whatsapp"
+               href="https://wa.me/919495402793
+               target="_blank">
+                WhatsApp
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
 
 </header>
 
@@ -96,7 +102,7 @@
         <div class="hero-small-title">
             Your Local Sleep & Bedding Studio
         </div>
-
+        <p class="hero-location">Thikkodi Bazar · Koyilandy</p>
         <h1>
             The art of
             <span>better sleep.</span>
@@ -114,7 +120,7 @@
                 Explore Mattresses
             </a>
 
-            <a href="https://wa.me/919048503810"
+            <a href="https://wa.me/919495402793
                target="_blank"
                class="btn-secondary">
                 WhatsApp Us
@@ -130,6 +136,7 @@
         <div class="hero-image-card">
 
             <p>Sleep Studio</p>
+            <span class="hero-badge">Premium Comfort</span>
 
             <h3>
                 Comfort that feels right.
@@ -371,13 +378,13 @@
                         View Details →
                     </a>
 
-                    <a
-                        href="https://wa.me/919048503810?text=Hi%20Sleep%20Studio,%20I%20am%20interested%20in%20{{ product.name|urlencode }}"
-                        class="product-card-whatsapp-btn"
-                        target="_blank"
-                    >
-                        WhatsApp
-                    </a>
+                   <a
+    href="https://wa.me/919048503810?text=Hi%20Sleep%20Studio,%20I%20am%20interested%20in%20{{ product.name|urlencode }}.%20Could%20you%20please%20share%20more%20details%20and%20availability%3F"
+    class="product-card-whatsapp-btn"
+    target="_blank"
+>
+    WhatsApp
+</a>
 
                 </div>
 
@@ -651,9 +658,8 @@
 </a>
 
 
-<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'jss/main.js' %}"></script>
 
-</body>
 
 </body>
 

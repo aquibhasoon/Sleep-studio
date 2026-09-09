@@ -11,9 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Scroll reveal
-    const revealElements = document.querySelectorAll(
-        ".section-heading, .mattress-card, .product-category, .feature, .cta, .location"
-    );
+      const revealElements = document.querySelectorAll(
+    ".section-heading, .mattress-card, .product-category, .feature, .cta, .location"
+);
+
 
     const observer = new IntersectionObserver(
         (entries) => {
@@ -64,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (filter === "all" || category === filter) {
 
                     card.style.display = "";
-                    
+
                     requestAnimationFrame(function () {
                         card.style.opacity = "1";
                         card.style.transform = "translateY(0)";
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else {
 
                     card.style.opacity = "0";
-                    card.style.transform = "translateY(8px)";
+                    card.style.transform = "translateY(12px)";
 
                     setTimeout(function () {
                         card.style.display = "none";
@@ -84,6 +85,92 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
         });
+
+    });
+
+});
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", function () {
+
+        navLinks.classList.toggle("mobile-open");
+
+    });
+
+}
+
+const mattressCards = document.querySelectorAll(".premium-card, .standard-card");
+
+const mattressObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+                mattressObserver.unobserve(entry.target);
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.25
+    }
+);
+
+mattressCards.forEach((card) => {
+    mattressObserver.observe(card);
+});
+
+const productCards = document.querySelectorAll(".product-card");
+
+const productObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("product-animate");
+                productObserver.unobserve(entry.target);
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+productCards.forEach((card) => {
+    productObserver.observe(card);
+});
+
+window.addEventListener("scroll", function () {
+
+    const navbar = document.querySelector(".navbar");
+
+    if (window.scrollY > 30) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+
+})
+
+const mobileNavLinks = document.querySelectorAll(".nav-links a");
+
+mobileNavLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        if (navLinks) {
+            navLinks.classList.remove("mobile-open");
+        }
 
     });
 
