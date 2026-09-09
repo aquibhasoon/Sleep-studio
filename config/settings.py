@@ -37,7 +37,7 @@ if os.getenv("RENDER_EXTERNAL_HOSTNAME"):
         os.getenv("RENDER_EXTERNAL_HOSTNAME")
     )
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
